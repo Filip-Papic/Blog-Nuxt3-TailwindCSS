@@ -6,8 +6,10 @@
 </template>
 
 <style>
-body {
-  background-color: #1C1C1C;
-  color: #FFE002;
+@layer {
+  body {
+    @apply bg-eerieblack;
+    @apply text-goldenyellow;
+  }
 }
 </style>

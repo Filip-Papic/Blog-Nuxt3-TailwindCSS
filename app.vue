@@ -1,15 +1,15 @@
 <template>
-  <div class="mx-4 md:mx-48">
+  <main class="mx-4 md:mx-48">
     <Header />
     <NuxtPage />
-  </div>
+  </main>
 </template>
 
 <style>
-@layer {
-  body {
-    @apply bg-eerieblack;
-    @apply text-goldenyellow;
-  }
+html.dark {
+  @apply text-goldenyellow bg-eerieblack;
+}
+html.light {
+  @apply text-eerieblack bg-softliliac;
 }
 </style>

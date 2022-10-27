@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <ArticleCard />
+    Page: article {{ $route.params.title }}
   </div>
 </template>
 

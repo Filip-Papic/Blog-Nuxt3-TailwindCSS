@@ -47,7 +47,7 @@ const showMenu = ref<boolean>(false);
       <div class="md:hidden" @click="showMenu = !showMenu">
         <button
           type="button"
-          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:text-uocgold focus:outline-none focus:ring-2 focus:ring-current"
+          class="inline-flex items-center p-2 text-sm rounded-lg hover:text-uocgold focus:outline-none focus:ring-2 focus:ring-current"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -87,7 +87,7 @@ const showMenu = ref<boolean>(false);
         </button>
       </div>
     </nav>
-    <hr class="mb-10 md:mx-0" />
+    <hr class="mb-10 md:mx-0 border-current" />
     <!-- mobile menu -->
     <TransitionRoot
       as="div"

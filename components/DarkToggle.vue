@@ -7,7 +7,6 @@ function toggleDark() {
 
 <template>
   <button
-    class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200"
     @click="toggleDark()"
   >
     <Icon

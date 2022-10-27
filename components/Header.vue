@@ -15,15 +15,15 @@ const showMenu = ref<boolean>(false);
         <li
           class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
         >
-          <NuxtLink to="/">About</NuxtLink>
+          <NuxtLink to="/about">About</NuxtLink>
         </li>
         <li
           class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
         >
-          <NuxtLink to="/">Contact</NuxtLink>
+          <NuxtLink to="/contact">Contact</NuxtLink>
         </li>
       </ul>
-      <NuxtLink to="/" class="inline-flex items-center">
+      <NuxtLink to="/" class="inline-flex items-center md:pr-2">
         <Icon
           name="tabler:brand-blogger"
           class="w-16 h-12 hover:text-uocgold cursor-pointer"
@@ -36,12 +36,12 @@ const showMenu = ref<boolean>(false);
         <li
           class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
         >
-          <NuxtLink to="/login">Login</NuxtLink>
+          <NuxtLink to="/search">Search</NuxtLink>
         </li>
         <li
           class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
         >
-          <NuxtLink to="/">Register</NuxtLink>
+          <NuxtLink to="/login">Login</NuxtLink>
         </li>
       </ul>
       <div class="md:hidden" @click="showMenu = !showMenu">

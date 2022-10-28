@@ -21,7 +21,7 @@ const emit = defineEmits(["update:modelValue"]);
   <div>
     <label class="relative">
       <input
-        class="bg-softliliac text-eerieblack font-bold py-3 px-4 rounded border border-uocgold shadow-lg placeholder:text-gray-600 hover:bg-uocgold hover:placeholder:text-eerieblack hover:disabled:bg-gray-500 hover:disabled:placeholder:text-softliliac w-3/5 md:w-2/5"
+        class="bg-softliliac text-eerieblack font-bold mb-4 py-3 px-4 rounded border border-uocgold shadow-lg placeholder:text-gray-600 hover:bg-uocgold hover:placeholder:text-eerieblack hover:disabled:bg-gray-500 hover:disabled:placeholder:text-softliliac md:w-96"
         :placeholder="placeholder"
         :class="{
           'border-red border-1 outline-none text-red': error,

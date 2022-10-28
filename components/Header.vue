@@ -100,35 +100,35 @@ const showMenu = ref<boolean>(false);
       :show="showMenu"
     >
       <div
-        class="absolute border-x-4 border-b-4 w-full bg-blackolive text-softliliac border-blackolive p-4"
+        class="absolute border-x-4 border-b-4 w-full bg-blackolive text-softliliac border-blackolive p-4 z-10"
         id="mobile-menu"
       >
         <ul class="md:hidden justify-center items-center mb-10">
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/">Home</NuxtLink>
           </li>
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink to="/">About</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/about">About</NuxtLink>
           </li>
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink to="/">Contact</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/contact">Contact</NuxtLink>
           </li>
           <hr class="my-10" />
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink to="/login">Login</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/search">Search</NuxtLink>
           </li>
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink to="/">Register</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/login">Login</NuxtLink>
           </li>
         </ul>
       </div>

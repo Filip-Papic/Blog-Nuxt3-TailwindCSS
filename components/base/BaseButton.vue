@@ -28,7 +28,7 @@ const hasText = computed(() => typeof useSlots().default === "function");
 
 <template>
   <button
-    class="bg-uclagold text-eerieblack hover:bg-uocgold-700 text-white font-bold py-3 px-4 rounded border border-uocgold shadow-lg hover:bg-uocgold"
+    class="bg-uclagold text-eerieblack text-white font-bold py-3 mb-4 px-4 rounded border border-uocgold shadow-lg hover:bg-uocgold"
     @click="loading ? null : emit('click', $event)"
     :disabled="disabled"
   >

@@ -3,7 +3,7 @@
 <template>
   <div>
     <h1
-      class="flex flex-col items-center justify-center md:mx-64 my-14 text-5xl"
+      class="flex flex-col items-center text-center justify-center md:mx-64 my-14 text-5xl"
     >
       This is the about page
     </h1>

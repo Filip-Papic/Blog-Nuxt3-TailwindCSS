@@ -1,8 +1,15 @@
+<script setup>
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Blog` : "Blog";
+  },
+});
+</script>
+
 <template>
-  <main class="mx-4 md:mx-48">
-    <Header />
+  <NuxtLayout>
     <NuxtPage />
-  </main>
+  </NuxtLayout>
 </template>
 
 <style>

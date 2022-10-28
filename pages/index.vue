@@ -2,7 +2,7 @@
 const staticArticles = [
   {
     id: 1,
-    title: "Title of the first article",
+    title: "first-article",
     published_at: "2021-07-01T00:00:00.000Z",
     category: "cat1",
     description:
@@ -32,7 +32,7 @@ const staticArticles = [
   },
 ];
 
-const config = useRuntimeConfig();
+/* const config = useRuntimeConfig();
 const params = {
   access_key: config.API_KEY,
   keywords: "technology",
@@ -41,7 +41,7 @@ const params = {
   sort: "popularity",
   limit: 1,
 };
-const { data } = useFetch(
+const { data } = await useFetch(
   "http://api.mediastack.com/v1/news?" +
     "access_key=" +
     params.access_key +
@@ -60,14 +60,24 @@ const { data } = useFetch(
     "&" +
     "limit=" +
     params.limit
-);
+); */
+
+const blogPosts = await queryContent('/blog')
+  .sort({ date: -1 }) // show latest articles first
+  .where({ _partial: false }) // exclude the Partial files
+  .find();
 </script>
 
 <template>
   <div>
-    <div v-if="data !== null">
+    <ul>
+    <li v-for="{ _path: slug, title } in blogPosts" :key="slug">
+      <NuxtLink :to="slug">{{ title }}</NuxtLink>
+    </li>
+  </ul>
+    <!-- <div v-if="staticArticles !== null">
       <ArticleCard
-        v-for="article in data.data"
+        v-for="article in staticArticles"
         :key="article.id"
         :article="article"
       />
@@ -82,6 +92,6 @@ const { data } = useFetch(
         :key="article.id"
         :article="article"
       />
-    </div>
+    </div> -->
   </div>
 </template>

@@ -62,19 +62,31 @@ const { data } = await useFetch(
     params.limit
 ); */
 
-const blogPosts = await queryContent('/blog')
-  .sort({ date: -1 }) // show latest articles first
-  .where({ _partial: false }) // exclude the Partial files
-  .find();
+const blogPosts = await useAsyncData('blog', () =>
+  queryContent("/blog")
+  .sort({ date: -1 })
+  .where({ _partial: false })
+  .find()
+);
 </script>
 
 <template>
   <div>
-    <ul>
+    <ContentList path="/blog" v-slot="{ list }">
+      <div v-for="article in list" :key="article._path">
+        <ArticleCard :article="article" />
+        
+        <!-- <NuxtLink :to="slug">
+          <h2>{{ title }}</h2>
+          <p>{{ description }}</p>
+        </NuxtLink> -->
+      </div>
+    </ContentList>
+    <!-- <ul>
     <li v-for="{ _path: slug, title } in blogPosts" :key="slug">
-      <NuxtLink :to="slug">{{ title }}</NuxtLink>
-    </li>
-  </ul>
+      <NuxtLink :to="slug">{{ title }}
+    </li> 
+  </ul>-->
     <!-- <div v-if="staticArticles !== null">
       <ArticleCard
         v-for="article in staticArticles"

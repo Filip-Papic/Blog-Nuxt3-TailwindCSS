@@ -1,29 +1,30 @@
 <script setup>
+import { convertDate } from "~/utils";
 const props = defineProps({ article: Object });
-const date = new Date(props.article.published_at).toLocaleString();
+const date = convertDate(props.article.date);
 </script>
 
 <template>
   <section>
-    <div
-      class="flex flex-col justify-center md:mx-64 my-14 min-w-fit"
-    >
+    <div class="flex flex-col justify-center md:mx-64 my-14 min-w-fit">
       <div>
         <div class="flex-inline">
           <small>{{ date }}</small>
           <span class="ml-2">
             <NuxtLink
-              :to="`/tag/${props.article.category}`"
+              v-for="tag in props.article.tags"
+              :key="tag"
+              :to="`/tag/${tag}`"
               class="font-bold text-blue-500"
             >
-              #{{ props.article.category }}
+              #{{ tag }}
             </NuxtLink>
-            <NuxtLink to="" class="font-bold text-blue-500">
+            <a :to="props.article.source" class="font-bold text-blue-500">
               #{{ props.article.source }}
-            </NuxtLink>
+            </a>
           </span>
         </div>
-        <NuxtLink :to="`/article/${props.article.title}`">
+        <NuxtLink :to="props.article._path">
           <h1 class="text-2xl font-bold pt-1 pb-4">
             {{ props.article.title.split(" ").slice(0, 50).join(" ") }}
           </h1>
@@ -31,7 +32,10 @@ const date = new Date(props.article.published_at).toLocaleString();
             {{ props.article.description.slice(0, 200) }}...
           </p>
         </NuxtLink>
-        <a :href="article.url" target="_blank" class="text-blue-500 font-bold pt-2"
+        <a
+          :href="article.url"
+          target="_blank"
+          class="text-blue-500 font-bold mt-10"
           >Read more</a
         >
       </div>

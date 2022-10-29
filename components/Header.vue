@@ -7,21 +7,27 @@ const showMenu = ref<boolean>(false);
   <div class="relative">
     <nav class="my-6 flex justify-between">
       <ul class="hidden md:flex justify-center items-center">
-        <li
-          class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+        <NuxtLink to="/">
+          <li
+            class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+          >
+            Home
+          </li>
+        </NuxtLink>
+        <NuxtLink to="/about">
+          <li
+            class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+          >
+            About
+          </li></NuxtLink
         >
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li
-          class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
-        >
-          <NuxtLink to="/about">About</NuxtLink>
-        </li>
-        <li
-          class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
-        >
-          <NuxtLink to="/contact">Contact</NuxtLink>
-        </li>
+        <NuxtLink to="/contact">
+          <li
+            class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+          >
+            Contact
+          </li>
+        </NuxtLink>
       </ul>
       <NuxtLink to="/" class="inline-flex items-center md:pr-2">
         <Icon
@@ -33,16 +39,20 @@ const showMenu = ref<boolean>(false);
         <li class="p-2 md:block md:pr-6">
           <DarkToggle class="hover:animate-spin" />
         </li>
-        <li
-          class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
-        >
-          <NuxtLink to="/search">Search</NuxtLink>
-        </li>
-        <li
-          class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
-        >
-          <NuxtLink to="/login">Login</NuxtLink>
-        </li>
+        <NuxtLink to="/search">
+          <li
+            class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+          >
+            Search
+          </li>
+        </NuxtLink>
+        <NuxtLink to="/login">
+          <li
+            class="hidden p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
+          >
+            Login
+          </li>
+        </NuxtLink>
       </ul>
       <div class="md:hidden" @click="showMenu = !showMenu">
         <button
@@ -117,13 +127,17 @@ const showMenu = ref<boolean>(false);
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink @click="showMenu = !showMenu" to="/contact">Contact</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/contact"
+              >Contact</NuxtLink
+            >
           </li>
           <hr class="my-10" />
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"
           >
-            <NuxtLink @click="showMenu = !showMenu" to="/search">Search</NuxtLink>
+            <NuxtLink @click="showMenu = !showMenu" to="/search"
+              >Search</NuxtLink
+            >
           </li>
           <li
             class="p-4 text-lg focus:hover:active:bg-uocgold focus:hover:active:text-eerieblack focus:hover:active:font-bold cursor-pointer"

@@ -1,9 +1,14 @@
 ---
-title: Second blog post
+title: Blog post numero dos
+author: Filip Papić
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec aliquam aliquam, nisl nisl aliquam lorem, nec aliquam nisl nisl sit amet lorem.
 date: 2022-10-28
+tags:
+  - blog
+  - second
+source: some other source
+url: https://example.com
 ---
-
-# Mandata putant et lapis procul mentibus praedam
 
 ## Falsaque quercus e tamen praedae victorem quid
 

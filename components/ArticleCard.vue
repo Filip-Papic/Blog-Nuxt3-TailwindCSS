@@ -18,8 +18,8 @@ const date = convertDate(props.article.date);
           >
             #{{ tag }}
           </NuxtLink>
-          <a :to="props.article.source" class="font-bold text-blue-500">
-            #{{ props.article.source }}
+          <a :to="props.article.source" class="font-bold italic">
+            -{{ props.article.source }}
           </a>
         </span>
       </div>

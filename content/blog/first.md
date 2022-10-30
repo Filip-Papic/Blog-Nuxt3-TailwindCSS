@@ -9,8 +9,6 @@ tags:
   - post
 source: some source
 url: https://example.com
-
-
 ---
 
 ::banner

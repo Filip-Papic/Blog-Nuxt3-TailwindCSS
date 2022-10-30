@@ -4,7 +4,7 @@
 <template>
   <div>
     <h1
-      class="flex flex-col items-center text-center justify-center md:mx-64 my-14 text-5xl"
+      class="text-center text-5xl font-bold my-14"
     >
       This is the contacts page
     </h1>

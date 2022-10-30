@@ -1,5 +1,11 @@
 <script setup>
 useHead({
+  link: [
+    {
+      rel: "icon",
+      href: "/favicon.ico",
+    }
+  ],
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Blog` : "Blog";
   },

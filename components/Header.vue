@@ -19,8 +19,8 @@ const showMenu = ref<boolean>(false);
             class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"
           >
             About
-          </li></NuxtLink
-        >
+          </li>
+        </NuxtLink>
         <NuxtLink to="/contact">
           <li
             class="p-2 md:block cursor-pointer relative after:content-[''] after:absolute after:top-11 after:left-0 after:w-full after:h-1 after:opacity-0 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:origin-center after:bg-current hover:after:opacity-100 hover:after:scale-x-100 font-bold"

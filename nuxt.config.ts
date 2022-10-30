@@ -9,9 +9,14 @@ export default defineNuxtConfig({
         autoImports: ["defineStore", "acceptHMRUpdate"],
       },
     ],
+    "@nuxtjs/algolia",
     "nuxt-icon",
     "@nuxtjs/color-mode",
   ],
+  algolia: {
+    apiKey: "d0fcad8e1aa3e8d65163a66930a1ba34",
+    applicationId: "AX2EKZ0EB2",
+  },
   imports: {
     dirs: ["stores"],
   },
@@ -22,6 +27,6 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
   publicRuntimeConfig: {
-    API_KEY: ''
-  }
+    API_KEY: "",
+  },
 });

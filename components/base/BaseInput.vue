@@ -2,6 +2,10 @@
 import { PropType } from "vue";
 
 defineProps({
+  type: {
+    type: String as PropType<"search" | "text" | "email" | "password">,
+    default: "text",
+  },
   placeholder: {
     type: String,
     default: "",
@@ -21,6 +25,7 @@ const emit = defineEmits(["update:modelValue"]);
   <div>
     <label class="relative">
       <input
+        :type="type"
         class="bg-softliliac text-eerieblack font-bold mb-4 py-3 px-4 rounded border border-uocgold shadow-lg placeholder:text-gray-600 hover:bg-uocgold hover:placeholder:text-eerieblack hover:disabled:bg-gray-500 hover:disabled:placeholder:text-softliliac md:w-96"
         :placeholder="placeholder"
         :class="{

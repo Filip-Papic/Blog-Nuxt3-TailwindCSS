@@ -14,8 +14,8 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
   ],
   algolia: {
-    apiKey: "d0fcad8e1aa3e8d65163a66930a1ba34",
-    applicationId: "AX2EKZ0EB2",
+    apiKey: process.env.ALGOLIA_API_KEY,
+    applicationId: process.env.ALGOLIA_APP_ID,
   },
   imports: {
     dirs: ["stores"],

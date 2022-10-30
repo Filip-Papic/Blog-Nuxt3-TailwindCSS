@@ -1,65 +1,34 @@
 <script lang="ts" setup>
-/* const route = useRoute();
-const title = route.params.slug;
-useHead({
-  title: title.toString(),
-  meta: [
-    { name: "description", content: "article.description" },
-    { property: "og:description", content: "article.description" },
-    { property: "og:title", content: title.toString() },
-    { property: "og:type", content: "article" },
-    { property: "og:url", content: "article.url" },
-    { property: "og:image", content: "article.image" },
-    { property: "og:site_name", content: "Blog" },
-    { property: "og:locale", content: "en_US" },
-    { property: "twitter:card", content: "summary_large_image" },
-    { property: "twitter:site", content: "@blog" },
-    { property: "twitter:creator", content: "@blog" },
-    { property: "twitter:title", content: title.toString() },
-    { property: "twitter:description", content: "article.description" },
-    { property: "twitter:image", content: "article.image" },
-  ],
-}); */
 import { convertDate } from "~/utils";
 
 const route = useRoute();
 const article = await useAsyncData("blog", () =>
-  queryContent("/blog").where({ _path: route.params.slug }).findOne()
+  queryContent("/blog")
+    .where({
+      _path: route.params.slug ? route.params.slug : "/", // "/blog/404"
+    })
+    .findOne()
 );
 </script>
 
 <template>
-  <div>
-    <main class="flex justify-start w-full px-4 md:px-52">
-      <div class="flex flex-col justify-center md:mx-10 my-4 min-w-fit">
-        <ContentDoc
-          :path="
-            $route.params.slug ? `/blog/${$route.params.slug[0]}` : '/' //'/blog/404'
-          "
-        >
-          <template v-slot="{ doc }">
-            <!-- <header v-if="doc">
-              <h1 class="text-uocgold dark:text-uclagold"
-              >{{ doc.title }}</h1>
-              <p class="text-center pt-6"
-              >{{ doc.author }}</p>
-              <p class="text-center text-sm pb-6 pt-0"
-              >{{ convertDate(doc.date) }}</p>
-            </header> -->
-            <main>
-              <ContentRenderer :value="doc" />
-            </main>
-          </template>
-          <template #not-found>
-            <h2>Blog slug ({{ $route.params.slug }}) not found</h2>
-          </template>
-          <template #empty>
-            <h2>Blog slug ({{ $route.params.slug }}) is empty</h2>
-          </template>
-        </ContentDoc>
-      </div>
-    </main>
-  </div>
+  <main class="flex justify-center px-4 -mx-4 md:-mx-20">
+    <div class="flex flex-col justify-center">
+      <ContentDoc>
+        <template v-slot="{ doc }">
+          <main>
+            <ContentRenderer :value="doc" />
+          </main>
+        </template>
+        <template #not-found>
+          <h2>Blog post ({{ $route.params.slug }}) not found</h2>
+        </template>
+        <template #empty>
+          <h2>Blog post ({{ $route.params.slug }}) is empty</h2>
+        </template>
+      </ContentDoc>
+    </div>
+  </main>
 </template>
 
 <style scoped>
@@ -88,6 +57,6 @@ main :deep(blockquote) {
   @apply border-l-4 border-uocgold dark:border-softliliac pl-4 my-10 mx-5;
 }
 main :deep(pre) {
-  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-md;
+  @apply bg-gray-100 dark:bg-blackolive p-6 md:pl-20 rounded-md my-4 whitespace-pre-wrap break-all text-justify text-eerieblack dark:text-goldenyellow;
 }
 </style>

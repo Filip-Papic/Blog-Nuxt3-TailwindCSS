@@ -13,6 +13,15 @@ url: https://example.com
 
 ---
 
+::banner
+---
+title: First blog post
+author: Filip Papić
+date: 2022-10-27
+image: first-cover.jpg
+---
+::
+
 ## Simul ex ora trabibus te carus anilem
 
 **Lorem** markdownum trahitur et petit nuda auribus suae enim herbosas, auras

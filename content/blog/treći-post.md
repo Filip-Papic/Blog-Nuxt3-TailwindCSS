@@ -2,7 +2,7 @@
 title: Treći post
 author: Filip Papić
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec aliquam aliquam, nisl nisl aliquam lorem, nec aliquam nisl nisl sit amet lorem.
-date: 2022-10-28
+date: 2022-10-29
 tags:
   - blog
   - three
@@ -14,8 +14,8 @@ url: https://example.com
 ---
 title: Treći post
 author: Filip Papić
-date: 2022-10-28
-image: https://api.iconify.design/charm:atom.svg
+date: 2022-10-29
+image: third-cover.jpg
 ---
 ::
 

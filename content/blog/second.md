@@ -10,6 +10,15 @@ source: some other source
 url: https://example.com
 ---
 
+::banner
+---
+title: Blog post numero dos
+author: Filip Papić
+date: 2022-10-28
+image: second-cover.jpg
+---
+::
+
 ## Falsaque quercus e tamen praedae victorem quid
 
 Lorem markdownum tandem, gelidaeque illa deriguisse vultus quoque obstem, ora
